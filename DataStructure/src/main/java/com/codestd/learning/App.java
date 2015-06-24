@@ -1,4 +1,4 @@
-package com.tiamaes.learning;
+package com.codestd.learning;
 
 /**
  * Hello world!
