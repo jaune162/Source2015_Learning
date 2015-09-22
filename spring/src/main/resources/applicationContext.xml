@@ -24,9 +24,19 @@
 	<bean id="peopleFactory" class="com.tiamaes.learning.spring.beancreate.PeopleFactory" />
 	<bean id="people" factory-bean="peopleFactory" factory-method="createInstance" />
 	
-	<!-- <oxm:castor-marshaller id="marshaller" mapping-location="classpath:mapper/mapping.xml"/> -->
+	<oxm:castor-marshaller id="marshaller" mapping-location="classpath:mapper/mapping.xml"/>
 	
-	<bean id="xmlBeanUnmarshaller" class="com.tiamaes.learning.spring.oxm.XMLBeanUnmarshaller">
+	<bean id="xmlBeanUnmarshaller" class="com.tiamaes.learning.spring.oxm.castor.XMLBeanUnmarshaller">
 		<property name="unmarshaller" ref="marshaller" />
 	</bean>
+	
+	<oxm:jaxb2-marshaller id="jaxbMarshaller">
+		<oxm:class-to-be-bound name="com.tiamaes.learning.spring.bean.Address"/>
+		<oxm:class-to-be-bound name="com.tiamaes.learning.spring.bean.People"/>
+	</oxm:jaxb2-marshaller>
+	
+	<bean id="jaxbUnmarshaller" class="com.tiamaes.learning.spring.oxm.jaxb.JAXBUnmarshaller">
+		<property name="unmarshaller" ref="jaxbMarshaller" />
+	</bean>
+	
 </beans>

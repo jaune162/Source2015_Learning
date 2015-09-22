@@ -1,7 +1,7 @@
 /* 
  * Copyright ©  2015 TIAMAES.Co.Ltd. All rights reserved.
  */
-package com.tiamaes.learning.spring.oxm;
+package com.tiamaes.learning.spring.oxm.castor;
 
 import java.io.IOException;
 import java.io.InputStream;

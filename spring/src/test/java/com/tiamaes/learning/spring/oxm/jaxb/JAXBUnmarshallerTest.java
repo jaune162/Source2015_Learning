@@ -1,35 +1,34 @@
 /* 
  * Copyright ©  2015 TIAMAES.Co.Ltd. All rights reserved.
  */
-package com.tiamaes.learning.spring.oxm;
-
-import java.io.IOException;
+package com.tiamaes.learning.spring.oxm.jaxb;
 
 import javax.annotation.Resource;
-import javax.xml.bind.JAXBException;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.tiamaes.learning.spring.oxm.castor.XMLBeanUnmarshaller;
-
 /**  
- * <p>TODO </p>
+ * <p>类描述： TODO </p>
  * <p>创建人：王成委  </p>
- * <p>创建时间：2015年9月21日 下午5:58:01  </p>
+ * <p>创建时间：2015年9月22日 下午2:11:46  </p>
+ * @since 1.0.0
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext.xml"})
-public class XMLBeanUnmarshallerTest {
+public class JAXBUnmarshallerTest {
 
 	@Resource
-	private XMLBeanUnmarshaller unmarshaller;
-	
+	private JAXBUnmarshaller unmarshaller;
+	/**
+	 * Test method for {@link com.tiamaes.learning.spring.oxm.jaxb.JAXBUnmarshaller#unmarshal()}.
+	 * @throws Exception 
+	 */
 	@Test
-	public void test() throws IOException, JAXBException {
-		this.unmarshaller.loadXMLBean();
+	public void testUnmarshal() throws Exception {
+		this.unmarshaller.unmarshal();
 	}
 
 }
