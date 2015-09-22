@@ -35,6 +35,10 @@
 		<oxm:class-to-be-bound name="com.tiamaes.learning.spring.bean.People"/>
 	</oxm:jaxb2-marshaller>
 	
+	<!-- <bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="packagesToScan" value="com.tiamaes.learning.spring.bean" />
+	</bean> -->
+	
 	<bean id="jaxbUnmarshaller" class="com.tiamaes.learning.spring.oxm.jaxb.JAXBUnmarshaller">
 		<property name="unmarshaller" ref="jaxbMarshaller" />
 	</bean>
