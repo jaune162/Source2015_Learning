@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<context:annotation-config />
+	<context:component-scan base-package="com.codestd.springstudy" />
+	
+	<bean id="people" class="com.codestd.springstudy.lesson03.People">
+		<property name="name" value="jaune" />
+	</bean>
+	
+	<!-- 
+	可以使用#{people.name}调用people的name属性
+	可以使用#{people.getName()}调用people的getName()方法
+	还可以链式操作 #{people.getName().toUpperCase()}，先调用getName方法，在转为大写
+	如果people.getName()为null，会抛出异常可以使用#{people.getName()?.toUpperCase()}来避免异常发生
+	
+	
+	调用静态方法
+	使用T() #{T(java.lang.Math).PI}
+	
+	支持算数运算符：+, -, *, /, %, ^
+	
+	支持字符串连接
+	
+	-->
+	<bean id="spelBeanBase" class="com.codestd.springstudy.spel.SPELBeanBase">
+		<!-- 字符串一定是用用单引号的  #{'jaune'}-->
+		<property name="name" value="#{people.getName() + ' sir'}" />
+		
+		<!-- 数字可以直接写 #{15} -->
+		<property name="age" value="15" />
+		
+		<!-- 浮点型支持科学计数发 -->
+		<property name="money" value="#{T(java.lang.Math).PI}" /> <!--#{58.6} #{1e4} -->
+		
+		<property name="is" value="#{true}" />
+		
+		<!-- 等同于使用ref注入 -->
+		<property name="people" value="#{people}" /> 
+	</bean>
+	
+	
+</beans>

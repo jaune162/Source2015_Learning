@@ -8,6 +8,7 @@ public class People {
 	private String name;
 	
 	public String getName() {
+		System.out.println("调用了Get方法");
 		return name;
 	}
 
