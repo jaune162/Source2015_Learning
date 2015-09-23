@@ -41,7 +41,7 @@
 		<property name="name" value="#{people.getName() + ' sir'}" />
 		
 		<!-- 数字可以直接写 #{15} -->
-		<property name="age" value="15" />
+		<property name="age" value="#{15 + 3}" />
 		
 		<!-- 浮点型支持科学计数发 -->
 		<property name="money" value="#{T(java.lang.Math).PI}" /> <!--#{58.6} #{1e4} -->
