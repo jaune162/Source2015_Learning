@@ -18,7 +18,7 @@
 	<context:component-scan base-package="com.codestd.springstudy" />
 	
 	<bean id="people" class="com.codestd.springstudy.lesson03.People">
-		<property name="name" value="jaune" />
+		<!-- <property name="name" value="jaune" /> -->
 	</bean>
 	
 	<!-- 
@@ -38,7 +38,7 @@
 	-->
 	<bean id="spelBeanBase" class="com.codestd.springstudy.spel.SPELBeanBase">
 		<!-- 字符串一定是用用单引号的  #{'jaune'}-->
-		<property name="name" value="#{people.getName() + ' sir'}" />
+		<property name="name" value="#{people.name != null ? people.name :' wangchengwei'}" />
 		
 		<!-- 数字可以直接写 #{15} -->
 		<property name="age" value="#{15 + 3}" />
@@ -46,7 +46,7 @@
 		<!-- 浮点型支持科学计数发 -->
 		<property name="money" value="#{T(java.lang.Math).PI}" /> <!--#{58.6} #{1e4} -->
 		
-		<property name="is" value="#{true}" />
+		<property name="is" value="#{!true}" />
 		
 		<!-- 等同于使用ref注入 -->
 		<property name="people" value="#{people}" /> 
