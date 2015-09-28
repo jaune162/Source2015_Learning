@@ -30,6 +30,7 @@ public class SPELBeanBaseTest {
 		System.out.println("money:"+this.spelBeanBase.getMoney());
 		System.out.println("is:"+this.spelBeanBase.isIs());
 		System.out.println("people"+this.spelBeanBase.getPeople());
+		System.out.println("names"+this.spelBeanBase.getNames());
 	}
 
 }

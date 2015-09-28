@@ -3,6 +3,8 @@
  */
 package com.codestd.springstudy.spel;
 
+import java.util.List;
+
 import com.codestd.springstudy.lesson03.People;
 
 /**  
@@ -17,6 +19,7 @@ public class SPELBeanBase {
 	private int age;
 	private double money;
 	private boolean is;
+	private List<String> names;
 	
 	private People people;
 	
@@ -49,6 +52,12 @@ public class SPELBeanBase {
 	}
 	public void setPeople(People people) {
 		this.people = people;
+	}
+	public List<String> getNames() {
+		return names;
+	}
+	public void setNames(List<String> names) {
+		this.names = names;
 	}
 	
 }
