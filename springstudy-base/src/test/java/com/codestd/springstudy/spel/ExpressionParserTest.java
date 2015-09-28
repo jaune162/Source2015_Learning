@@ -1,7 +1,10 @@
 package com.codestd.springstudy.spel;
 
+import java.util.Date;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.core.convert.support.DefaultConversionService;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
@@ -17,8 +20,10 @@ public class ExpressionParserTest {
 	
 	@Test
 	public void test() {
-		Expression exp = parser.parseExpression("'11'");
-		Object value = exp.getValue();
+		//DefaultConversionService.addDefaultConverters(converterRegistry);
+		//ConversionService
+		Expression exp = parser.parseExpression("'"+(new Date()).getTime()+"'");
+		Object value = exp.getValue(Date.class);
 		System.out.println(value);
 		System.out.println(value.getClass());
 	}
