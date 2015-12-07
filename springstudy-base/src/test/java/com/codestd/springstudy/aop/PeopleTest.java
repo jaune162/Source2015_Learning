@@ -1,4 +1,4 @@
-package com.codestd.springstudy.lesson03;
+package com.codestd.springstudy.aop;
 
 import javax.annotation.Resource;
 
@@ -9,11 +9,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:lesson03/applicationContext.xml"})
+@ContextConfiguration(locations={"classpath:aop/applicationContext.xml"})
 public class PeopleTest {
 
+	@Resource(name = "people")
+	private Human people;
+	
 	@Resource
-	private People people;
+	private TargetA a;
 	
 	@Before
 	public void setUp(){
@@ -21,11 +24,12 @@ public class PeopleTest {
 	}
 	
 	@Test
-	public void testSleep() {
+	public void testSleep() throws Exception {
 		System.out.println("---------------------------------");
 		people.sleep();
+		people.getName();
 		System.out.println("---------------------------------");
-		people.sleep("");
+		//a.exec();
 	}
 
 }

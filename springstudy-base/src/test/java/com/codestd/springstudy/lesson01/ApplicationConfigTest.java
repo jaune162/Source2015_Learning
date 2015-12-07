@@ -1,5 +1,4 @@
-package com.codestd.springstudy.lesson02;
-
+package com.codestd.springstudy.lesson01;
 
 import javax.annotation.Resource;
 
@@ -9,16 +8,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:lesson02/applicationContext.xml"})
-public class AutowiredTestTest {
+@ContextConfiguration(locations={"classpath:lesson01/applicationContext.xml"})
+public class ApplicationConfigTest {
 
-	@Resource
-	//@Autowired
-	private AutowiredTest autowiredTestImpl1;
+	@Resource(name="a")
+	private A a;
 	
 	@Test
 	public void test() {
-		System.out.println(this.autowiredTestImpl1);
+		System.out.println(a);
 	}
 
 }

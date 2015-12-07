@@ -3,7 +3,7 @@ package com.codestd.springstudy.spel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.codestd.springstudy.lesson03.People;
+import com.codestd.springstudy.aop.People;
 
 @Component
 public class SystemInfo {

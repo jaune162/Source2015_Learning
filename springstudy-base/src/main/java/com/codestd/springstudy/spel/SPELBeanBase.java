@@ -5,7 +5,7 @@ package com.codestd.springstudy.spel;
 
 import java.util.List;
 
-import com.codestd.springstudy.lesson03.People;
+import com.codestd.springstudy.aop.People;
 
 /**  
  * <p>类描述： TODO </p>
