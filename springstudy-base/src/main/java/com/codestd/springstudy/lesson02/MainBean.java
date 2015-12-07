@@ -3,6 +3,8 @@ package com.codestd.springstudy.lesson02;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 public class MainBean {
 
 	private String str;
@@ -11,7 +13,7 @@ public class MainBean {
 	
 	private EnumerationType enumType;
 	
-	//@Resource
+	@Resource
 	//@Autowired(required=false)
 	private SubBean subBean;
 

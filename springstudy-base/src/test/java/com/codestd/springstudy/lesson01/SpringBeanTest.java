@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.codestd.springstudy.lesson01.SpringBean;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:lesson01/applicationContext.xml"})
 public class SpringBeanTest{
@@ -20,5 +18,13 @@ public class SpringBeanTest{
 	public void testPrint() {
 		this.springBean.print();
 	}
+	
+	/*@SuppressWarnings("resource")
+	@Test
+	public void testWhithoutSpringTest(){
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:lesson01/applicationContext.xml");
+		SpringBean springBean = (SpringBean) ctx.getBean("springBean");
+		springBean.print();
+	}*/
 
 }

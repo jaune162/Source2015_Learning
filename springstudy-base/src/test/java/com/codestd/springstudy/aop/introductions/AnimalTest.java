@@ -1,5 +1,4 @@
-package com.codestd.springstudy.lesson02;
-
+package com.codestd.springstudy.aop.introductions;
 
 import javax.annotation.Resource;
 
@@ -9,16 +8,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:lesson02/applicationContext.xml"})
-public class AutowiredTestTest {
+@ContextConfiguration(locations={"classpath:aop/applicationContext.xml"})
+public class AnimalTest {
 
-	@Resource
-	//@Autowired
-	private AutowiredTest autowiredTestImpl1;
+	@Resource(name="cock")
+	private Flyable flyable;
 	
 	@Test
 	public void test() {
-		System.out.println(this.autowiredTestImpl1);
+		this.flyable.fly();
 	}
 
 }

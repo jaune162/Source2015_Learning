@@ -1,9 +1,10 @@
-package com.codestd.springstudy.lesson03;
+package com.codestd.springstudy.aop;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
-public class People {
+@Component("people")
+public class People implements Human{
 
 	private String name;
 	
@@ -11,12 +12,15 @@ public class People {
 		return name;
 	}
 
-	public void setName(String name) {
+	
+	public void setName( @Value("J") String name) {
 		this.name = name;
 	}
 
-	public void sleep(){
+	public void sleep() throws Exception{
+		
 		System.out.println(this.name+"睡着了");
+		throw new Exception("Throw test");
 	}
 	
 	public void sleep(String str){
